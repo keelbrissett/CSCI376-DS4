@@ -210,42 +210,77 @@ nav a:hover::after {
   animation: fadeIn 1s ease-in-out;
 }
 
+.top-image-banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.top-image-banner img {
+  width: 100%;           /* Always full width */
+  height: 750px;         /* Control the height */
+  object-fit: cover;     /* Crop vertically but never squish */
+  display: block;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5%;
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(4px);
-  gap: 1rem;
+  background-color: #f5f2e9; /* soft cream background */
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
   width: auto;
+}
+
+.search-container {
+  display: flex;
+  flex: 1;
+  max-width: 700px;
+  margin: 0 2rem;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.filter-btn, .search-btn {
+  background: #6e776a;
+  color: white;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn img {
+  width: 16px;
+  height: 16px;
 }
 
 .search-bar {
   flex: 1;
-  max-width: 500px;
-  padding: 0.6rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 50px;
+  padding: 0.8rem 1rem;
+  border: none;
   outline: none;
   font-size: 1rem;
 }
 
-.nav-buttons button {
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  margin-left: 0.5rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: var(--transition);
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6e776a;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
-.nav-buttons button:hover {
-  background-color: #a37858;
+.nav-buttons img {
+  height: 24px;
+  width: auto;
 }
