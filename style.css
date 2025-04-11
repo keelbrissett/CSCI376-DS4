@@ -12,8 +12,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(180deg, #ead3d3 0%, #e9ecef 100%);
+  background: linear-gradient(180deg, #faf0e6 0%, #ffffff 100%);
 }
+
 
 
 /* Header animations */
@@ -62,7 +63,7 @@ nav a:hover::after {
 /* Book grid animations */
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   padding: 1rem 5%;
   max-width: 1440px;
@@ -279,6 +280,7 @@ nav a:hover::after {
   color: #6e776a;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+  text-decoration: none;  /* removes underline */
 }
 
 .nav-buttons img {
