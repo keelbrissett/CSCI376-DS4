@@ -284,3 +284,47 @@ nav a:hover::after {
   height: 24px;
   width: auto;
 }
+
+.banner-content {
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 500px;
+}
+
+.banner-book {
+  width: 140px;
+  border-radius: 8px;
+}
+
+.banner-text h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.banner-text p {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.read-btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.read-btn:hover {
+  background: #a37858;
+}
