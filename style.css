@@ -12,7 +12,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(180deg, #ead3d3 0%, #e9ecef 100%);
 }
 
 
@@ -64,7 +64,7 @@ nav a:hover::after {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 4rem 5%;
+  padding: 1rem 5%;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -72,7 +72,7 @@ nav a:hover::after {
 .book-card {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.0rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   transition: var(--transition);
   cursor: pointer;
@@ -187,4 +187,65 @@ nav a:hover::after {
       flex-direction: column;
       text-align: center;
   }
+}
+.top-image-banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.top-image-banner img {
+  width: 100%;           /* Always full width */
+  height: 750px;         /* Control the height */
+  object-fit: cover;     /* Crop vertically but never squish */
+  display: block;
+}
+
+.section-header {
+  font-size: 1.8rem;     /* Smaller text */
+  color: var(--primary);
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+  padding-left: 5%;      /* Aligns with book-grid left padding */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 500px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.nav-buttons button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-left: 0.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-buttons button:hover {
+  background-color: #a37858;
 }
