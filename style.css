@@ -227,6 +227,7 @@ nav a:hover::after {
 
 .navbar {
   display: flex;
+  height: 120px;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5%;
@@ -234,7 +235,7 @@ nav a:hover::after {
 }
 
 .logo {
-  height: 60px;
+  height: 150px;
   width: auto;
 }
 
