@@ -19,7 +19,6 @@ body {
 
 /* Header animations */
 header {
-  background-color: rgba(255, 255, 255, 0.75);
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   animation: headerSlide 1s ease-out;
@@ -231,13 +230,16 @@ nav a:hover::after {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5%;
-  background-color: #f5f2e9; /* soft cream background */
+  background-color: transparent; /* soft cream background */
+  /* background: linear-gradient(to right, #f8f4ec, #e7e3d8); */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .logo {
-  height: 150px;
+  height: 125px; /* was 150px */
   width: auto;
 }
+
 
 .search-container {
   display: flex;
