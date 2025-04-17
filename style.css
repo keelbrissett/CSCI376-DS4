@@ -19,9 +19,13 @@ body {
 
 /* Header animations */
 header {
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  animation: headerSlide 1s ease-out;
+  padding: 1.5rem 5%;
+  background: linear-gradient(to right, #f4f1ea, #ded8cc);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: headerSlide 0.6s ease-in-out;
 }
 
 @keyframes headerSlide {
@@ -226,41 +230,44 @@ nav a:hover::after {
 
 .navbar {
   display: flex;
-  height: 120px;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 5%;
-  background-color: transparent; /* soft cream background */
-  /* background: linear-gradient(to right, #f8f4ec, #e7e3d8); */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
 }
 
 .logo {
-  height: 125px; /* was 150px */
-  width: auto;
+  height: 80px;
+  transition: transform 0.3s ease;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+}
 
 .search-container {
-  display: flex;
   flex: 1;
-  max-width: 700px;
-  margin: 0 2rem;
-  background: white;
-  border-radius: 4px;
+  max-width: 600px;
+  margin: 0 1.5rem;
+  display: flex;
+  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.filter-btn, .search-btn {
-  background: #6e776a;
+
+.filter-btn,
+.search-btn {
+  background: var(--accent);
   color: white;
   border: none;
   padding: 0 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover,
+.search-btn:hover {
+  background: #9f7a59;
 }
 
 .search-btn img {
@@ -269,21 +276,24 @@ nav a:hover::after {
 }
 
 .search-bar {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border: none;
-  outline: none;
+  padding: 0.8rem;
   font-size: 1rem;
+  border: none;
+  flex: 1;
 }
 
 .nav-buttons {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #6e776a;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-decoration: none;  /* removes underline */
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+
+.nav-buttons:hover {
+  color: var(--accent);
+}
 }
 
 .nav-buttons img {
