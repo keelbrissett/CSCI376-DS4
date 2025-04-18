@@ -2,73 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Bookstore</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
     <header>
         <div class="navbar">
             <a href="index.html">
-                <img src="images/peoples_logo.png" alt="Logo" class="logo">
+                <img src="images/peoples_logo.png" alt="Logo" class="logo" />
             </a>
 
             <nav>
-                <ul>
-                  <li>
-                    <a href="#">Filter ▼</a>
+                <ul style="display: flex; align-items: center; gap: 1rem;">
+                    <li style="position: relative;">
+                        <a href="#">Filter ▼</a>
                         <ul class="dropdown">
-                        <li><a href="#">★★★★★</a></li>
-                        <li><a href="#">★★★★</a></li>
-                        <li><a href="#">★★★</a></li>
-                        <li><a href="#">★★</a></li>
-                        <li><a href="#">★</a></li>
-                    </ul>
-                  </li>
+                            <li><a href="#" data-rating="5">★★★★★</a></li>
+                            <li><a href="#" data-rating="4">★★★★</a></li>
+                            <li><a href="#" data-rating="3">★★★</a></li>
+                            <li><a href="#" data-rating="2">★★</a></li>
+                            <li><a href="#" data-rating="1">★</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button id="clearFilterBtn"
+                            style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">
+                            Clear Filter
+                        </button>
+                    </li>
                 </ul>
             </nav>
 
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search by Title or Author"
-                    class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by Title or Author" class="search-bar" />
                 <button class="search-btn" id="searchBtn" type="button">
-                    <img src="images/magnifying_glass.png" alt="Search">
+                    <img src="images/magnifying_glass.png" alt="Search" />
                 </button>
             </div>
 
             <a href="my-library.html" class="nav-buttons">
-                <img src="images/books.png" alt="My Library">
+                <img src="images/books.png" alt="My Library" />
                 <span>MY LIBRARY</span>
             </a>
         </div>
     </header>
 
-
     <div class="top-image-banner" id="topBanner">
-        <img src="images/Harry_potter.png" alt="Banner Image">
-
+        <img src="images/Harry_potter.png" alt="Banner Image" />
         <div class="banner-content">
             <img src="https://m.media-amazon.com/images/I/81q77Q39nEL.jpg" style="height: 400px" alt="Book Cover"
-                class="banner-book">
-
+                class="banner-book" />
             <div class="banner-text">
                 <h2>Harry Potter and the Philosopher's Stone</h2>
                 <p>J.K. Rowling</p>
-                <p>Harry Potter has no idea how famous he is. That's because he's being raised by his miserable aunt and
-                    uncle who are terrified Harry will learn that he's really a wizard...</p>
+                <p>
+                    Harry Potter has no idea how famous he is. That's because he's being
+                    raised by his miserable aunt and uncle who are terrified Harry will
+                    learn that he's really a wizard...
+                </p>
                 <p>★★★★★</p>
                 <button class="read-btn">Read Now</button>
             </div>
         </div>
     </div>
 
-
     <h2 class="section-header">Popular Titles</h2>
 
     <div class="book-grid">
+        <!-- All book cards remain unchanged -->
         <div class="book-card" data-title="The Great Gatsby F. Scott Fitzgerald">
             <div class="book-cover"
                 style="background-image: url('https://images.squarespace-cdn.com/content/51c20371e4b09c37644d200e/1533844677260-1I3RXCYBU8INXCAB8MP1/GATSBYORIGINALCOVERART-facebook.jpg?format=1500w&content-type=image%2Fjpeg')">
@@ -130,24 +135,22 @@
         </div>
     </div>
 
-    </div>
-
     <script>
         const searchInput = document.getElementById('searchInput');
         const searchBtn = document.getElementById('searchBtn');
         const bookCards = document.querySelectorAll('.book-card');
         const topBanner = document.getElementById('topBanner');
+        const ratingLinks = document.querySelectorAll('.dropdown a');
+        const clearFilterBtn = document.getElementById('clearFilterBtn');
 
         function filterBooks() {
             const query = searchInput.value.toLowerCase().trim();
-
             bookCards.forEach(card => {
                 const title = card.getAttribute('data-title').toLowerCase();
                 card.style.display = title.includes(query) ? 'block' : 'none';
             });
         }
 
-        // Hide/show banner based on search input
         searchInput.addEventListener('input', () => {
             if (searchInput.value.trim() !== '') {
                 topBanner.style.display = 'none';
@@ -161,8 +164,28 @@
         });
 
         searchBtn.addEventListener('click', filterBooks);
-    </script>
 
+        ratingLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const rating = link.getAttribute('data-rating');
+                topBanner.style.display = 'none';
+                bookCards.forEach(card => {
+                    const stars = card.querySelector('p:last-of-type')?.textContent || "";
+                    const numStars = stars.length;
+                    card.style.display = (numStars === parseInt(rating)) ? 'block' : 'none';
+                });
+            });
+        });
+
+        clearFilterBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            topBanner.style.display = 'block';
+            bookCards.forEach(card => {
+                card.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 
 </html>
