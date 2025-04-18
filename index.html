@@ -16,26 +16,29 @@
                 <img src="images/peoples_logo.png" alt="Logo" class="logo" />
             </a>
 
-            <nav>
-                <ul style="display: flex; align-items: center; gap: 1rem; position: relative">
-                    <li style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="position: relative;">
-                            <a href="#">Filter ▼</a>
-                            <ul class="dropdown">
-                                <li><a href="#" data-rating="5">★★★★★</a></li>
-                                <li><a href="#" data-rating="4">★★★★</a></li>
-                                <li><a href="#" data-rating="3">★★★</a></li>
-                                <li><a href="#" data-rating="2">★★</a></li>
-                                <li><a href="#" data-rating="1">★</a></li>
-                            </ul>
-                        </div>
-                        <button id="clearFilterBtn"
-                            style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">
-                            Clear Filter
-                        </button>
-                    </li>
+            
+<nav>
+    <ul style="display: flex; align-items: center; gap: 1rem; position: relative">
+        <li>
+            <div style="position: relative;">
+                <a href="#">Filter ▼</a>
+                <ul class="dropdown">
+                    <li><a href="#" data-rating="5">★★★★★</a></li>
+                    <li><a href="#" data-rating="4">★★★★</a></li>
+                    <li><a href="#" data-rating="3">★★★</a></li>
+                    <li><a href="#" data-rating="2">★★</a></li>
+                    <li><a href="#" data-rating="1">★</a></li>
                 </ul>
-            </nav>
+            </div>
+        </li>
+        <li>
+            <button id="clearFilterBtn" class="clear-filter-btn">
+                Clear Filter
+            </button>
+        </li>
+    </ul>
+</nav>
+
 
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search by Title or Author" class="search-bar" />
