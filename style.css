@@ -37,6 +37,7 @@ nav {
 
 nav ul {
   display: flex;
+  align-items: center;
   justify-content: center;
   list-style: none;
   gap: 2rem;
@@ -305,6 +306,10 @@ nav ul {
   background-color: #a37858;
   padding: 0.8rem;
   border-radius: 8px;
+}
+
+.clearFilterBtn {
+  font-family: 'Roboto', sans-serif;
 }
 
 .banner-content {
