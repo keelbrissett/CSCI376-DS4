@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const highlightBtn = document.querySelector("#highlightButton");
     const resetBtn = document.querySelector("#resetButton");
     const clearBtn = document.querySelector("#clearButton");
+    const searchInput = document.querySelector("#searchInput");
+
   
-    // ----- EVENTS -----
     highlightBtn.addEventListener("click", () => {
       books.forEach(book => {
         const title = book.querySelector("h2").textContent;
@@ -32,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   
-    // ----- SEARCH LOGIC -----
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase();
       books.forEach(book => {

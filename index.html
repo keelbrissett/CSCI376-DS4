@@ -16,11 +16,12 @@
                 <img src="images/peoples_logo.png" alt="Logo" class="logo" />
             </a>
 
-            
+
+          
 <nav>
-    <ul style="display: flex; align-items: center; gap: 1rem; position: relative">
-        <li>
-            <div style="position: relative;">
+    <ul style="display: flex; align-items: center; gap: 1rem; position: left">
+        <li style="position: left;">
+            <div style="position: left;">
                 <a href="#">Filter ▼</a>
                 <ul class="dropdown">
                     <li><a href="#" data-rating="5">★★★★★</a></li>
@@ -47,10 +48,6 @@
                 </button>
             </div>
 
-            <a href="my-library.html" class="nav-buttons">
-                <img src="images/books.png" alt="My Library" />
-                <span style="color: #133721">MY LIBRARY</span>
-            </a>
         </div>
     </header>
 
@@ -155,11 +152,12 @@
         }
 
         searchInput.addEventListener('input', () => {
-            if (searchInput.value.trim() !== '') {
-                topBanner.style.display = 'none';
-            } else {
-                topBanner.style.display = 'block';
-            }
+            const query = searchInput.value.toLowerCase().trim();
+            topBanner.style.display = query ? 'none' : 'block';
+            bookCards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                card.style.display = title.includes(query) ? 'block' : 'none';
+            });
         });
 
         searchInput.addEventListener('keydown', function (e) {

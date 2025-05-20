@@ -321,6 +321,7 @@ nav ul {
 }
 
 .clearFilterBtn {
+  
   font-family: 'Roboto', sans-serif;
   color: #133721;
 }
@@ -394,6 +395,7 @@ nav ul {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: relative;
 }
 
 .clear-filter-btn:hover {
